@@ -30,22 +30,12 @@ class Solution:
     def isBalanced(self, parenthesis): 
             #type parenthesis: string
             #return type: boolean
-            def s_case(char):
-                if char == "[" or "]":
-                    return("Bracket")
-                if char == "(" or ")":
-                    return("Parenthesis")
-                if char == "{" or "}":
-                    return("C-Bracket")
-            
-            new = [i for i in parenthesis]    
-            return (parenthesis) 
-            if len(new)%2 == 1:
-                return False
-            for i in range(int(len(new)/2)):
-                if s_case(new[i]) != s_case(new[(-1*i)-1]):
-                    return False
+        new = [i for i in parenthesis] 
+        if new.count("[") == new.count(']') and new.count("{") == new.count('}') and new.count("(") == new.count(')'):
             return True
+        else:
+            return False
+
 
 def main():
     str1=input()
