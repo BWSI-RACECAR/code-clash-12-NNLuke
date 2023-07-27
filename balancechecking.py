@@ -27,13 +27,6 @@ Input:{[{}]  Output: False
 
 """
 class Solution:
-    def s_case(char):
-         if char == "[" or "]":
-            return("Bracket")
-         if char == "(" or ")":
-            return("Parenthesis")
-         if char == "{" or "}":
-            return("C-Bracket")
     def isBalanced(self, parenthesis): 
             #type parenthesis: string
             #return type: boolean
@@ -45,7 +38,8 @@ class Solution:
                 if char == "{" or "}":
                     return("C-Bracket")
             
-            new = [i for i in parenthesis]     
+            new = [i for i in parenthesis]    
+            return (parenthesis) 
             if len(new)%2 == 1:
                 return False
             for i in range(int(len(new)/2)):
